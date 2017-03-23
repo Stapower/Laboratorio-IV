@@ -1,0 +1,50 @@
+
+
+.holaMundo {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: -21px;
+  border: none;
+  font: normal 16px/normal Arial Black, Gadget, sans-serif;
+  color: rgba(0,0,0,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #9e5a1f;
+  -webkit-box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.5) inset;
+  box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.5) inset;
+  -webkit-transform: rotateY(-5.156620156177409deg)   ;
+  transform: rotateY(-5.156620156177409deg)   ;
+
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slideRight {
+	0% {
+		transform: translateX(-150%);
+	}
+	50%{
+		transform: translateX(8%);
+	}
+	65%{
+		transform: translateX(-4%);
+	}
+	80%{
+		transform: translateX(4%);
+	}
+	95%{
+		transform: translateX(-2%);
+	}			
+	100% {
+		transform: translateX(0%);
+	}	
+}
+@-webkit-keyframes girando {
+   from,20% 	{ -webkit-transform: rotateY(0deg);   }
+   30%,40%  	{ -webkit-transform: rotateY(90deg);  }
+   50%,60%  	{ -webkit-transform: rotateY(180deg); }
+   70%,80% 	{ -webkit-transform: rotateY(270deg); }
+   90%,to	{ -webkit-transform: rotateY(360deg); }
+}
