@@ -1,3 +1,12 @@
-npm install -g angular-cli
+https://cli.angular.io/
+
+npm install -g angular-cli [instala librerías angular]
 ng help
-ng new nombreDeProjecto
+ng new nombreDeProjecto [Projecto angular]
+ng server [crea servidor]
+https://localhost/4200
+
+npm -save [guarda los comandos instalados que se usaron en la aplicación]
+
+app.component.ts
+export class AppComponent
