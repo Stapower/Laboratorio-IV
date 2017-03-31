@@ -11,7 +11,8 @@ import {RouterModule, Routes} from '@angular/router';
 //array de rutas
 //constante llamara RouteArray de tipo Routes (lo definimos arriba )
 const RouteArray:Routes = [{path:'login' ,component:LoginComponent},
-                           {path:'notFound', component:PageNotFoundComponent}];
+                          {path:'', redirectTo: '/login', pathMatch:'full'},
+                          {path:'**', component:PageNotFoundComponent}];
 
 
 @NgModule({
