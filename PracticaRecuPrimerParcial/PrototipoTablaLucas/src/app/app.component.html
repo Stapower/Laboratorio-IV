@@ -1,0 +1,49 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<button (click)="MostrarFormulario()">Mostrar Formulario</button>
+
+ <div class="row">
+    <div class="col-sm-4 text-right">
+      <b>Prompt example: </b>
+    </div>
+    <div class="col-sm-4">
+      <button class="btn btn-default btn-block" (click)=showPrompt()>Show prompt</button>
+    </div>
+    <div class="col-sm-4" *ngIf="promptMessage">
+      <span>Your name: </span>
+      <b>{{promptMessage}}</b>
+    </div>
+  </div>
+<form [formGroup]="formAgregar" *ngIf="formVisible">
+    <input type="text" formControlName="nombrePersona" placeholder="Nombre"/><br>
+    <input type="text" formControlName="apellidoPersona" placeholder="Apellido"/><br>
+    <input type="text" formControlName="dniPersona" placeholder="DNI"/><br>
+    <input type="radio" formControlName="sexoPersona" value="m"> Masculino
+    <input type="radio" formControlName="sexoPersona" value="f"> Femenino
+
+    <img src="" id="fotoPrevia" class="fotoPrevia">
+    <input type="file" id="foto" (change)="PrevisualizarFoto();"/>
+
+    <br/><input type="password" formControlName="passPersona" placeholder="Password"/><br>
+    <br/>
+    <button type="button" (click)="AgregarPersona()">Agregar</button>
+    <p [ngStyle]="{'color': 'red'}">{{mensajeErrorFormAlta}}</p>
+    </form>
+
+<div *ngIf="!formVisible"> 
+  <table>
+    <thead><th>ID</th><th>Nombre</th><th>Apellido</th><th>DNI</th><th>Sexo</th><th>Foto</th><th></th></thead>
+    <tr *ngFor = "let persona of datosTraidos" [ngStyle]="{'background-color': ElegirColor(persona.sexo)}"  >        
+      <td>{{persona.id}}</td>
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellido}}</td>
+      <td>{{persona.dni}}</td>
+      <td>{{(persona.sexo == 'f') ? 'femenino' : 'masculino'}}</td>       
+      <td><img [ngStyle]="{'width': '100px'}" src="http://localhost/angular1p/API/fotos/{{persona.dni}}.png"></td>
+      <td><button (click)="EliminarPersona(persona.id, persona.dni)">Eliminar</button></td>
+    </tr>
+  </table>
+</div>
