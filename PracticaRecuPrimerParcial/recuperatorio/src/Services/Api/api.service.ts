@@ -14,16 +14,6 @@ export class ApiService {
    // console.info(this.traerTodosLosPaises());
   }
 
-SaveTrivialScore(parametro)
-{
-  console.log("par: " + parametro);
-  
-      console.log(this.http
-        .get(parametro)
-        .toPromise()
-        .then(this.extraerDatos)
-        .catch(this.error));
-}
   AgregarPersona(formData){
     var parametro = "https://pps-tomas.000webhostapp.com/Clase-1/Clase1.php/";
     return this.http.post(parametro + "persona/agregar", formData).toPromise();
@@ -39,14 +29,13 @@ TraerDatos():Promise<any>
         .catch(this.error);
 }
 
-Eliminar(object):Promise<any>
+Eliminar(id):any
 {
-  var parametro = "https://pps-tomas.000webhostapp.com/Clase-1/Clase1.php/traerTodos";
-      return this.http
-        .get(parametro)
-        .toPromise()
-        .then(this.extraerDatos)
-        .catch(this.error);
+ 
+  var parametro = "https://pps-tomas.000webhostapp.com/Clase-1/Clase1.php/eliminarUno/"+id;
+  return this.http.get(parametro)
+  .then(this.extraerDatos)
+  .catch(this.error);
 }
 
 Modificar():Promise<any>

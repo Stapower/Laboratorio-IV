@@ -2,28 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { FileUploadModule } from 'ng2-file-upload';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
-import {PopupModule} from 'ng2-opd-popup';
-
-
-
+import {ApiService} from '../Services/Api/api.service';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent//,
-  //  FileUploadModule
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    Ng2SmartTableModule,
-    PopupModule.forRoot()
-
+    HttpModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
