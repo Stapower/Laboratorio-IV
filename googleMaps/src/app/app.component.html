@@ -1,0 +1,22 @@
+<h1>
+  {{title}}
+</h1>
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+
+<sebm-google-map  (mapClick)="mapClicked($event)" [latitude]="lat" [longitude]="lng">
+  <sebm-google-map-marker *ngFor="let l of Lugares" [latitude]="l.lat" [longitude]="l.lng"></sebm-google-map-marker>
+   <!--sebm-google-map-directions [origin]="origin" [destination]="destination"></sebm-google-map-directions-->
+<sebm-google-map-directions [origin]="origin" [destination]="destination"></sebm-google-map-directions>
+
+</sebm-google-map>
+
+    <!--sebm-google-map-polyline>
+         <sebm-google-map-polyline-point *ngFor="let l of Lugares" [latitude]="l.lat" [longitude]="l.lng" [latitude]="latA" [longitude]="lngA">
+         </sebm-google-map-polyline-point>
+     </sebm-google-map-polyline-->
+<!--body>
+    <div id="googleMap" style="width:500px;height:380px;"></div>
+</body-->
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
