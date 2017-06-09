@@ -1,0 +1,6 @@
+ng build antes de subir el tp a la pagina
+subimos node modules + la carpeta que crea el build
+
+en el index.html
+referenciar bien la variable que tiene el path
+base href"/" -> base href"/NombreDeLaAplicacion"
